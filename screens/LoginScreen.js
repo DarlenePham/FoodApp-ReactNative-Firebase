@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/core'
 import React, { useEffect, useState } from 'react'
-import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { KeyboardAvoidingView, StyleSheet, Image, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { auth } from '../firebase'
 
 const LoginScreen = () => {
@@ -44,6 +44,15 @@ const LoginScreen = () => {
       style={styles.container}
       behavior="padding"
     >
+      
+      <Image
+          style={styles.title}
+          source={require('../assets/tasty.png')}
+      /> 
+      <Image
+          style={styles.logo}
+          source={require('../assets/pro5.png')}
+      />      
       <View style={styles.inputContainer}>
         <TextInput
           placeholder="Email"
@@ -81,10 +90,23 @@ const LoginScreen = () => {
 export default LoginScreen
 
 const styles = StyleSheet.create({
+  title: {
+    height: 100,
+    width: '80%',
+    alignSelf: "center"
+  },
+  logo: {
+    //flex: 1,
+    height: 150,
+    width: 150,
+    alignSelf: "center",
+    margin: 30
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#FFB74D'
   },
   inputContainer: {
     width: '80%'
@@ -103,16 +125,16 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   button: {
-    backgroundColor: '#0782F9',
+    backgroundColor: '#FF7000',
     width: '100%',
     padding: 15,
-    borderRadius: 10,
+    borderRadius: 25,
     alignItems: 'center',
   },
   buttonOutline: {
     backgroundColor: 'white',
     marginTop: 5,
-    borderColor: '#0782F9',
+    borderColor: '#FF7000',
     borderWidth: 2,
   },
   buttonText: {
@@ -121,7 +143,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   buttonOutlineText: {
-    color: '#0782F9',
+    color: '#FF7000',
     fontWeight: '700',
     fontSize: 16,
   },
