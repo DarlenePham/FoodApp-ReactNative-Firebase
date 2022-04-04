@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     header: {
         width: '80%',
         color: 'black',
-        fontSize: 28,
+        fontSize: 22,
         fontWeight: '700',
         marginLeft: 18,
         marginBottom: 10

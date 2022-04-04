@@ -1,11 +1,18 @@
 import React from "react";
+import { useNavigation } from '@react-navigation/core'
 import { StyleSheet, Text, Image, View, TouchableOpacity } from "react-native";
 
 const Restaurant = () => {
+    const navigation = useNavigation()
+
+    const handleRestaurant = () => {
+        navigation.navigate("Restaurant")
+    }
+    
     return (
         <View>
             <TouchableOpacity
-          //nPress={handleLogin}
+          onPress={handleRestaurant}
           style={styles.outline}
             >
                 <View style={styles.imageWrapper}>
@@ -31,11 +38,11 @@ export default Restaurant;
 
 const styles = StyleSheet.create({
     outline: {
-        width: 350,
+        width: '95%',
         height: 200,
         alignSelf: 'center',
         backgroundColor: 'white',
-        borderRadius: 15,
+        borderRadius: 5,
         margin: 10,
         shadowColor: "#000", 
         shadowOffset: { width: 0, height: 2, }, 
@@ -46,8 +53,8 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 130,
         backgroundColor: 'gray',
-        borderTopLeftRadius: 15,
-        borderTopRightRadius: 15
+        borderTopLeftRadius: 5,
+        borderTopRightRadius: 5
     },
     title: {
         width: '80%',

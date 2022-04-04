@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25
   },
   input: {
-    fontSize: 20,
+    fontSize: 18,
     marginLeft: 10,
     width: "90%",
   },

@@ -28,9 +28,9 @@ const HomeScreen = () => {
     <View style={styles.container}>
       <><Header />
       </>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
       <Text style={styles.header}>Category</Text>
-        <ScrollView horizontal={true} style={styles.scrollView}>
+        <ScrollView showsHorizontalScrollIndicator={false} horizontal={true} style={styles.scrollView}>
         <><Category /></>
         </ScrollView>
 
@@ -41,6 +41,7 @@ const HomeScreen = () => {
           <Text style={styles.buttonText}>Can't decide? Let's find out!</Text>
         </TouchableOpacity>
       
+      <View style={{marginTop: 10, marginBottom: 10}}>
         <View style={{ flexDirection:"row" }}>
           <Text style={styles.header}>You may like</Text>
           <TouchableOpacity
@@ -50,39 +51,44 @@ const HomeScreen = () => {
           </TouchableOpacity>
         </View>
         <View style={{ flexDirection:"row" }}>
-        <ScrollView horizontal={true} style={styles.scrollViewRestaurant}>
-        <><Restaurant /></>
-        <><Restaurant /></>
-        <><Restaurant /></>
-        <><Restaurant /></>
+        <ScrollView showsHorizontalScrollIndicator={false} horizontal={true} style={styles.scrollViewRestaurant}>
+        <View style={styles.wrapper}><Restaurant /></View>
+        <View style={styles.wrapper}><Restaurant /></View>
+        <View style={styles.wrapper}><Restaurant /></View>
+        <View style={styles.wrapper}><Restaurant /></View>
         </ScrollView>
         </View>
-
+      </View>
+        
+      <View style={{marginTop: 10, marginBottom: 10}}>  
         <View style={{ flexDirection:"row" }}>
           <Text style={styles.header}>Nearest to you</Text>
           <FontAwesome5 name="arrow-circle-right" size={30} style={{right: 0}} />
         </View>
         <View style={{ flexDirection:"row" }}>
-        <ScrollView horizontal={true} style={styles.scrollViewRestaurant}>
-        <><Restaurant /></>
-        <><Restaurant /></>
-        <><Restaurant /></>
-        <><Restaurant /></>
+        <ScrollView showsHorizontalScrollIndicator={false} horizontal={true} style={styles.scrollViewRestaurant}>
+        <View style={styles.wrapper}><Restaurant /></View>
+        <View style={styles.wrapper}><Restaurant /></View>
+        <View style={styles.wrapper}><Restaurant /></View>
+        <View style={styles.wrapper}><Restaurant /></View>
         </ScrollView>
         </View>
+      </View>
 
+      <View style={{marginTop: 10, marginBottom: 10}}>
         <View style={{ flexDirection:"row" }}>
           <Text style={styles.header}>Explore new tastes</Text>
           <FontAwesome5 name="arrow-circle-right" size={30} style={{right: 0}} />
         </View>
         <View style={{ flexDirection:"row" }}>
-        <ScrollView horizontal={true} style={styles.scrollViewRestaurant}>
-        <><Restaurant /></>
-        <><Restaurant /></>
-        <><Restaurant /></>
-        <><Restaurant /></>
+        <ScrollView showsHorizontalScrollIndicator={false} horizontal={true} style={styles.scrollViewRestaurant}>
+        <View style={styles.wrapper}><Restaurant /></View>
+        <View style={styles.wrapper}><Restaurant /></View>
+        <View style={styles.wrapper}><Restaurant /></View>
+        <View style={styles.wrapper}><Restaurant /></View>
         </ScrollView>
         </View>
+      </View>
       </ScrollView>
     </View>
   )
@@ -100,7 +106,7 @@ const styles = StyleSheet.create({
   header: {
     width: '80%',
     color: 'black',
-    fontSize: 28,
+    fontSize: 22,
     fontWeight: '700',
     marginLeft: 18,
     marginBottom: 10
@@ -117,10 +123,13 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     alignItems: 'center',
     alignSelf: 'center',
-    margin: 10
+    margin: 20
   },
   scrollView: {
     maxHeight: 120
+  },
+  wrapper: {
+    maxWidth: 380,
   },
   scrollViewRestaurant: {
     maxHeight: 230
