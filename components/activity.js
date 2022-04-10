@@ -4,17 +4,7 @@ import { StyleSheet, Text, Image, View, TouchableOpacity, Keyboard, Button } fro
 const Menu = () => {
     return (
         <View style={styles.outline}>
-            <View style={{ width: '80%' }}>
-                <View style={{ flexDirection: 'row' }}>
-                    <Text style={styles.foodName}>Food Name</Text>
-                    <Text style={styles.price}>$x.xx</Text>
-                </View>
-                <Text style={styles.ingredient}>Ingredient A, ingredient B, ingredient C, etc.</Text>
-            </View>
-            <Image
-                style={styles.logo}
-                source={require('../assets/pro5.png')}
-            />
+            <Text style={styles.activity}>You add Restaurant X to your Favorite</Text>
         </View>
     )
 };
@@ -25,9 +15,9 @@ const styles = StyleSheet.create({
     outline: {
         flexDirection: 'row',
         width: '95%',
-        height: 100,
+        height: 50,
         backgroundColor: 'white',
-        borderRadius: 5,
+        borderRadius: 15,
         marginTop: 10,
         padding: 10,
         shadowColor: "#000",
@@ -43,17 +33,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         right: 0
     },
-    foodName: {
-        fontSize: 20,
-        fontWeight: '600',
-    },
-    price: {
-        fontSize: 20,
-        fontWeight: '600',
-        position: 'absolute',
-        right: 0
-    },
-    ingredient: {
+    activity: {
         fontSize: 15,
         fontWeight: '500',
         opacity: 0.5,
