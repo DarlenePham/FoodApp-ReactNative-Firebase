@@ -1,13 +1,32 @@
-import React from "react";
-import { useNavigation } from '@react-navigation/core'
+import React, { useEffect } from "react";
+import { useNavigation } from '@react-navigation/core';
 import { StyleSheet, Text, Image, View, TouchableOpacity } from "react-native";
+import { useState } from 'react';
+import {onSnapshot, collection, getFirestore } from "@firebase/firestore";
+//import { getFoods } from './FirestoreApi'
 
 const Restaurant = () => {
+    const db = getFirestore();
+
+    const[restaurants, setRestaurants] = useState([]);
+
     const navigation = useNavigation()
 
     const handleRestaurant = () => {
+        {
+            restaurants.map((restaurant) => (
+            console.log(restaurant.ID)
+        ))}
         navigation.navigate("Restaurant")
     }
+    
+    useEffect(
+        () => 
+            onSnapshot(collection(db,"Restaurants"), (snapshot) =>
+                setRestaurants(snapshot.docs.map((doc) => doc.data()))
+            ),
+        []
+    );
     
     return (
         <View>
@@ -16,7 +35,6 @@ const Restaurant = () => {
           style={styles.outline}
             >
                 <View style={styles.imageWrapper}>
-
                 </View>
                 <View style={{ flexDirection:"row" }}>
                    <Text style={styles.title}>Restaurant Name</Text>
