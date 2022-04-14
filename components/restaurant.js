@@ -19,33 +19,25 @@ const Restaurant = () => {
         ))}
         navigation.navigate("Restaurant")
     }
-    
-    useEffect(
-        () => 
-            onSnapshot(collection(db,"Restaurants"), (snapshot) =>
-                setRestaurants(snapshot.docs.map((doc) => doc.data()))
-            ),
-        []
-    );
-    
+
     return (
         <View>
             <TouchableOpacity
-          onPress={handleRestaurant}
-          style={styles.outline}
+                onPress={handleRestaurant}
+                style={styles.outline}
             >
                 <View style={styles.imageWrapper}>
                 </View>
-                <View style={{ flexDirection:"row" }}>
-                   <Text style={styles.title}>Restaurant Name</Text>
-                   <Text style={styles.rate}>4.9/5</Text>
+                <View style={{ flexDirection: "row" }}>
+                    <Text style={styles.title}>Restaurant Name</Text>
+                    <Text style={styles.rate}>4.9/5</Text>
                 </View>
-                <View style={{ flexDirection:"row" }}>
-                <Text style={styles.info}>xx miles</Text>
-                <Text style={styles.info}>|</Text>
-                <Text style={styles.info}>xx mins</Text>
-                <Text style={styles.info}>|</Text>
-                <Text style={styles.info}>Price: $$</Text>
+                <View style={{ flexDirection: "row" }}>
+                    <Text style={styles.info}>xx miles</Text>
+                    <Text style={styles.info}>|</Text>
+                    <Text style={styles.info}>xx mins</Text>
+                    <Text style={styles.info}>|</Text>
+                    <Text style={styles.info}>Price: $$</Text>
                 </View>
             </TouchableOpacity>
         </View>
@@ -62,8 +54,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         borderRadius: 5,
         margin: 10,
-        shadowColor: "#000", 
-        shadowOffset: { width: 0, height: 2, }, 
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 2, },
         shadowOpacity: 0.25,
         overflow: "hidden"
     },

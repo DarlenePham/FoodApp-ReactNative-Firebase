@@ -44,15 +44,15 @@ const LoginScreen = () => {
       style={styles.container}
       behavior="padding"
     >
-      
+
       <Image
-          style={styles.title}
-          source={require('../assets/tasty.png')}
-      /> 
+        style={styles.title}
+        source={require('../assets/tasty.png')}
+      />
       <Image
-          style={styles.logo}
-          source={require('../assets/pro5.png')}
-      />      
+        style={styles.logo}
+        source={require('../assets/pro5.png')}
+      />
       <View style={styles.inputContainer}>
         <TextInput
           placeholder="Email"

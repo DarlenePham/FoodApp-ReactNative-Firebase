@@ -9,42 +9,46 @@ import Menu from '../components/menu'
 const RestaurantScreen = () => {
     const navigation = useNavigation()
 
+    const handleReview = () => {
+        navigation.navigate("Review")
+    }
+
     return (
         <View style={styles.container}>
-             <ScrollView showsVerticalScrollIndicator={false}>
-                 <View style={styles.coverWrapper}>
-                     <View style={styles.image}>
-                         <TouchableOpacity onPress={() => navigation.goBack()}>
-                         <FontAwesome5 name="arrow-circle-left" size={30} style={{left: 15, marginTop: 35}}/>
-                         </TouchableOpacity>
-                     </View>
-                 </View>
-
-                 <View style={styles.block}>
-                 <View style={{ flexDirection:"row", borderBottomColor: 'black', borderBottomWidth: 1, width: '95%' }}>
-                   <Text style={styles.title}>Restaurant Name</Text>
-                   <AntDesign name="hearto" size={30} style={{position: 'absolute', right: 0, paddingTop: 10}} />
-                </View>
-                <View style={{ flexDirection:"row" }}>
-                <Text style={styles.info}>xx miles</Text>
-                <Text style={styles.info}>•</Text>
-                <Text style={styles.info}>Address Number, Street, Zip Code</Text>
-                </View>
-                <Text style={styles.info}>Open time: XX - YY</Text>
-                 </View>
-                
-                <View style={styles.block}>
-                <View style={{ flexDirection:"row", borderBottomColor: 'black', borderBottomWidth: 1, width: '95%' }}>
-                   <Text style={styles.title}>Reviews</Text>
-                   <Text style={styles.rate}>4.9/5</Text>
-                </View>
-                <><Review></Review></>
-                <Text style={{alignSelf: 'center'}}>View more</Text>
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <View style={styles.coverWrapper}>
+                    <View style={styles.image}>
+                        <TouchableOpacity onPress={() => navigation.goBack()}>
+                            <FontAwesome5 name="arrow-circle-left" size={30} style={{ left: 15, marginTop: 35 }} />
+                        </TouchableOpacity>
+                    </View>
                 </View>
 
                 <View style={styles.block}>
-                    <View style={{borderBottomColor: 'black', borderBottomWidth: 1, width: '95%'}}>
-                    <Text style={styles.title}>Menu</Text>
+                    <View style={{ flexDirection: "row", borderBottomColor: 'black', borderBottomWidth: 1, width: '95%' }}>
+                        <Text style={styles.title}>Restaurant Name</Text>
+                        <AntDesign name="hearto" size={30} style={{ position: 'absolute', right: 0, paddingTop: 10 }} />
+                    </View>
+                    <View style={{ flexDirection: "row" }}>
+                        <Text style={styles.info}>xx miles</Text>
+                        <Text style={styles.info}>•</Text>
+                        <Text style={styles.info}>Address Number, Street, Zip Code</Text>
+                    </View>
+                    <Text style={styles.info}>Open time: XX - YY</Text>
+                </View>
+
+                <View style={styles.block}>
+                    <View style={{ flexDirection: "row", borderBottomColor: 'black', borderBottomWidth: 1, width: '95%' }}>
+                        <Text style={styles.title}>Reviews</Text>
+                        <Text style={styles.rate}>4.9/5</Text>
+                    </View>
+                    <View style={{ marginLeft: -10 }}><Review></Review></View>
+                    <Text style={{ alignSelf: 'center' }} onPress={handleReview}>View more</Text>
+                </View>
+
+                <View style={styles.block}>
+                    <View style={{ borderBottomColor: 'black', borderBottomWidth: 1, width: '95%' }}>
+                        <Text style={styles.title}>Menu</Text>
                     </View>
                     <View style={styles.block}>
                         <Text style={styles.subTitle}>Menu 1</Text>
@@ -65,7 +69,7 @@ const RestaurantScreen = () => {
                         <><Menu></Menu></>
                     </View>
                 </View>
-             </ScrollView>
+            </ScrollView>
         </View>
     )
 }
@@ -74,10 +78,10 @@ export default RestaurantScreen
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      //justifyContent: 'center',
-      //alignItems: 'center',
-      backgroundColor: '#FFB74D'
+        flex: 1,
+        //justifyContent: 'center',
+        //alignItems: 'center',
+        backgroundColor: '#FFB74D'
     },
     coverWrapper: {
         width: '100%',
