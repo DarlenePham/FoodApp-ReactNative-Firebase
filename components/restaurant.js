@@ -5,28 +5,23 @@ import { useState } from 'react';
 import {onSnapshot, collection, getFirestore } from "@firebase/firestore";
 //import { getFoods } from './FirestoreApi'
 
-const Restaurant = () => {
-    const db = getFirestore();
-
-    const[restaurants, setRestaurants] = useState([]);
+const Restaurant = (props) => {
 
     const navigation = useNavigation()
 
     const handleRestaurant = () => {
-        {
-            restaurants.map((restaurant) => (
-            console.log(restaurant.ID)
-        ))}
-        navigation.navigate("Restaurant")
+        navigation.navigate("Restaurant", {
+            name: props.name,
+            avgStars: props.avgStars,
+            streetNum: props.streetNum,
+            street1: props.street1,
+            street2: props.street2,
+            zipCode: props.zipCode,
+            city: props.city,
+            state: props.state,
+            monHours: props.monHours
+        })
     }
-    
-    useEffect(
-        () => 
-            onSnapshot(collection(db,"Restaurants"), (snapshot) =>
-                setRestaurants(snapshot.docs.map((doc) => doc.data()))
-            ),
-        []
-    );
     
     return (
         <View>
@@ -37,15 +32,15 @@ const Restaurant = () => {
                 <View style={styles.imageWrapper}>
                 </View>
                 <View style={{ flexDirection:"row" }}>
-                   <Text style={styles.title}>Restaurant Name</Text>
-                   <Text style={styles.rate}>4.9/5</Text>
+                   <Text style={styles.title}>{props.name}</Text>
+                   <Text style={styles.rate}>{props.avgStars}/5</Text>
                 </View>
                 <View style={{ flexDirection:"row" }}>
-                <Text style={styles.info}>xx miles</Text>
-                <Text style={styles.info}>|</Text>
-                <Text style={styles.info}>xx mins</Text>
-                <Text style={styles.info}>|</Text>
-                <Text style={styles.info}>Price: $$</Text>
+                    <Text style={styles.info}>xx miles</Text>
+                    <Text style={styles.info}>|</Text>
+                    <Text style={styles.info}>xx mins</Text>
+                    <Text style={styles.info}>|</Text>
+                    <Text style={styles.info}>Price: $$</Text>
                 </View>
             </TouchableOpacity>
         </View>
