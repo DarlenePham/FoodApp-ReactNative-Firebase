@@ -8,6 +8,10 @@ import Activity from '../components/activity'
 const SearchScreen = () => {
     const navigation = useNavigation()
 
+    const handleSetting = () => {
+        navigation.navigate("Setting")
+    }
+
     return (
         <View style={styles.container}>
             <ScrollView showsVerticalScrollIndicator={false}>
@@ -45,6 +49,7 @@ const SearchScreen = () => {
 
                     <TouchableOpacity
                         style={styles.outline}
+                        onPress={handleSetting}
                     >
                         <Image
                             style={styles.logo}

@@ -8,6 +8,7 @@ import SearchScreen from './screens/SearchScreen';
 import RestaurantScreen from './screens/RestaurantScreen';
 import ReviewScreen from './screens/ReviewScreen';
 import ProfileScreen from './screens/ProfileScreen';
+import SettingScreen from './screens/SettingScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +22,7 @@ export default function App() {
         <Stack.Screen options={{headerShown: false }} name="Restaurant" component={RestaurantScreen} />
         <Stack.Screen options={{headerShown: false }} name="Review" component={ReviewScreen} />
         <Stack.Screen options={{headerShown: false }} name="Profile" component={ProfileScreen} />
+        <Stack.Screen options={{headerShown: false }} name="Setting" component={SettingScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
