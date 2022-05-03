@@ -1,12 +1,14 @@
 import { useNavigation } from '@react-navigation/core'
-import React from 'react'
+import React, {useContext, useState} from 'react'
 import { StyleSheet, Text, ScrollView, View, TouchableOpacity } from 'react-native'
 import { FontAwesome5, MaterialCommunityIcons } from "@expo/vector-icons";
 
 import Header from '../components/header'
 import Restaurant from '../components/restaurant'
+import { RestaurantContext } from '../context/restaurantContext';
+import { useEffect } from 'react/cjs/react.production.min';
 
-const SearchScreen = () => {
+const SearchScreen = ({data}) => {
   const navigation = useNavigation()
 
   return (
@@ -23,16 +25,11 @@ const SearchScreen = () => {
           <Text style={styles.header}>Search result</Text>
           <MaterialCommunityIcons name="filter-menu" size={30} style={{ right: 25 }} />
         </View>
-        <Restaurant />
-        <Restaurant />
-        <Restaurant />
-        <Restaurant />
-        <Restaurant />
-        <Restaurant />
-        <Restaurant />
-        <Restaurant />
-        <Restaurant />
-        <Restaurant />
+        {data.map((el) => (
+								<View style={styles.wrapper}>
+									<Restaurant data={el} />
+								</View>
+							))}
       </ScrollView>
     </View>
   )
@@ -55,4 +52,7 @@ const styles = StyleSheet.create({
     marginLeft: 18,
     marginBottom: 10
   },
+  wrapper: {
+
+  }
 })

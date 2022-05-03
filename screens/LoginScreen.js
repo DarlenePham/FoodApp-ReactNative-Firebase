@@ -1,7 +1,8 @@
 import { useNavigation } from '@react-navigation/core'
 import React, { useEffect, useState } from 'react'
 import { KeyboardAvoidingView, StyleSheet, Image, Text, TextInput, TouchableOpacity, View } from 'react-native'
-import { auth } from '../firebase'
+import { auth, db } from '../firebase'
+import { doc, setDoc } from "firebase/firestore"; 
 
 const LoginScreen = () => {
   const [email, setEmail] = useState('')
@@ -24,7 +25,11 @@ const LoginScreen = () => {
       .createUserWithEmailAndPassword(email, password)
       .then(userCredentials => {
         const user = userCredentials.user;
-        console.log('Registered with:', user.email);
+        setDoc(doc(db, 'User', user.uid), {
+          email: user.email,
+          favorite: [],
+          review: []
+        }).then((docRef) => console.log(docRef));
       })
       .catch(error => alert(error.message))
   }

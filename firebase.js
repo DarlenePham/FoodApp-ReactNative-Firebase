@@ -1,7 +1,12 @@
 // Import the functions you need from the SDKs you need
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
+<<<<<<< Updated upstream
 import{ getFirestore } from "firebase/firestore"
+=======
+import { getStorage } from "firebase/storage";
+import{ getFirestore } from "firebase/firestore";
+>>>>>>> Stashed changes
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -30,5 +35,14 @@ auth.onAuthStateChanged(user => {
   // Check for user status
 });
 
+<<<<<<< Updated upstream
 export { auth };
+=======
+const db = getFirestore(app);
+
+// Get a reference to the storage service, which is used to create references in your storage bucket
+const storage = getStorage(app);
+
+export { auth, db, storage };
+>>>>>>> Stashed changes
 export default getFirestore();

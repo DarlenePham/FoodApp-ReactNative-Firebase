@@ -8,6 +8,17 @@ import Activity from '../components/activity'
 const SearchScreen = () => {
     const navigation = useNavigation()
 
+<<<<<<< Updated upstream
+=======
+    const handleSetting = () => {
+        navigation.navigate("Setting")
+    }
+
+    const handleFavorite = () => {
+        navigation.navigate("Favorite")
+    }
+
+>>>>>>> Stashed changes
     return (
         <View style={styles.container}>
             <ScrollView showsVerticalScrollIndicator={false}>
@@ -25,6 +36,7 @@ const SearchScreen = () => {
                 <View style={{ flexDirection: "row", justifyContent: 'center' }}>
                     <TouchableOpacity
                         style={styles.outline}
+                        onPress={handleFavorite}
                     >
                         <Image
                             style={styles.logo}

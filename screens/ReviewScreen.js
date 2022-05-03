@@ -1,11 +1,12 @@
 import { useNavigation } from '@react-navigation/core'
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react';
 import { StyleSheet, Text, ScrollView, View, TouchableOpacity } from 'react-native'
 import { FontAwesome5, MaterialCommunityIcons } from "@expo/vector-icons";
 
 import Review from '../components/review'
+import { RestaurantContext } from '../context/restaurantContext';
 
-const ReviewScreen = () => {
+const ReviewScreen = ({data}) => {
     const navigation = useNavigation()
 
     return (
@@ -17,17 +18,11 @@ const ReviewScreen = () => {
                     >
                         <FontAwesome5 name="arrow-circle-left" size={30} style={{ paddingLeft: 15 }} />
                     </TouchableOpacity>
-                    <Text style={styles.header}>xxx Reviews</Text>
+                    <Text style={styles.header}>{data.length} Reviews</Text>
                 </View>
-                <Review />
-                <Review />
-                <Review />
-                <Review />
-                <Review />
-                <Review />
-                <Review />
-                <Review />
-                <Review />
+                {data.map((el) => (
+									<Review data={el} />
+                ))}
             </ScrollView>
         </View>
     )
