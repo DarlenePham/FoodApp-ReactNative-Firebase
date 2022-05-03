@@ -8,34 +8,15 @@ import SearchScreen from './screens/SearchScreen';
 import RestaurantScreen from './screens/RestaurantScreen';
 import ReviewScreen from './screens/ReviewScreen';
 import ProfileScreen from './screens/ProfileScreen';
-<<<<<<< Updated upstream
-=======
 import SettingScreen from './screens/SettingScreen';
 import FavoriteScreen from './screens/FavoriteScreen';
 import { RestaurantContext } from './context/restaurantContext';
->>>>>>> Stashed changes
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-<<<<<<< Updated upstream
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen options={{headerShown: false }} name="Login" component={LoginScreen} />
-        <Stack.Screen options={{headerShown: false }} name="Home" component={HomeScreen} />
-        <Stack.Screen options={{headerShown: false }} name="Search" component={SearchScreen} />
-        <Stack.Screen options={{headerShown: false }} name="Restaurant" component={RestaurantScreen} />
-        <Stack.Screen options={{headerShown: false }} name="Review" component={ReviewScreen} />
-        <Stack.Screen options={{headerShown: false }} name="Profile" component={ProfileScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
-=======
 	const [res, setRes] = useState([]);
 	const [resReview, setResReview] = useState([]);
->>>>>>> Stashed changes
 
 	const getAllRes = (value) => {
 		setRes(value);

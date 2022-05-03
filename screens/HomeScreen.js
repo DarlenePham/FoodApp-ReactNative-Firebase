@@ -1,10 +1,8 @@
-<<<<<<< Updated upstream
 import { useNavigation } from '@react-navigation/core'
 import React from 'react'
 import { StyleSheet, Text, ScrollView, View, TouchableOpacity } from 'react-native'
 import { auth } from '../firebase'
 import { FontAwesome5 } from "@expo/vector-icons";
-=======
 import { useNavigation } from '@react-navigation/core';
 import React, { useContext, useEffect, useState } from 'react';
 import {
@@ -17,7 +15,7 @@ import {
 import firebase, { auth, db } from '../firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import { FontAwesome5 } from '@expo/vector-icons';
->>>>>>> Stashed changes
+
 
 import Header from '../components/header';
 import Category from '../components/category';
@@ -74,7 +72,6 @@ const HomeScreen = () => {
 					</>
 				</ScrollView>
 
-<<<<<<< Updated upstream
         <View style={{ marginTop: 10, marginBottom: 10 }}>
           <View style={{ flexDirection: "row" }}>
             <Text style={styles.header}>You may like</Text>
@@ -93,12 +90,10 @@ const HomeScreen = () => {
             </ScrollView>
           </View>
         </View>
-=======
 				<TouchableOpacity
 					style={styles.button}>
 					<Text style={styles.buttonText}>Can't decide? Let's find out!</Text>
 				</TouchableOpacity>
->>>>>>> Stashed changes
 
 				<View style={{ marginTop: 10, marginBottom: 10 }}>
 					<View style={{ flexDirection: 'row' }}>
