@@ -15,8 +15,6 @@ import Menu from '../components/menu';
 import { RestaurantContext } from '../context/restaurantContext';
 import { doc, setDoc, updateDoc, arrayUnion, collection, getDocs } from "firebase/firestore"; 
 import { auth, db } from '../firebase';
-//import firebase from 'firebase/compat/app';
-//import { FadeInFromBottomAndroidSpec } from '@react-navigation/stack/lib/typescript/src/TransitionConfigs/TransitionSpecs';
 
 const RestaurantScreen = ({ route }) => {
 	const resContext = useContext(RestaurantContext);
@@ -36,9 +34,7 @@ reviews.forEach((doc) => {
 });
 resContext.getAllResReview(data);
 setResReview(data);
-//console.log(data);
 }, [])
-//console.laog(reviews.docs.map((el) => ({id: el.id, data: el.data()})));
 
 	const handleReview = () => {
 		navigation.navigate('Review');
@@ -46,20 +42,12 @@ setResReview(data);
 
 	const handleFavorite = () => {
 		updateDoc(doc(db, 'User', auth.currentUser?.uid), {favorite: arrayUnion(route.params.id)})
-		//setDoc(doc(db, 'User', auth.currentUser?.uid, 'Favorite', route.params.id))
-		//console.log(info.data.id);
 	};
-
-	//console.log(resContext.res);
 
 	// filter the context to get the correct res using the id (the id is passed as a param)
 	const data = resContext.res.filter((el) => el.id === route.params.id);
 
 	const info = data[0];
-
-	//console.log(data[0].data);
-
-	// then just use this data variable to populate the screen. I already did the name for you. Do the same thing for the rest.
 
 	return (
 		<View style={styles.container}>
@@ -184,8 +172,6 @@ export default RestaurantScreen;
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		//justifyContent: 'center',
-		//alignItems: 'center',
 		backgroundColor: '#FFB74D',
 	},
 	coverWrapper: {
@@ -215,7 +201,6 @@ const styles = StyleSheet.create({
 		fontWeight: '600',
 	},
 	rate: {
-		//width: '20%',
 		padding: 8,
 		fontSize: 20,
 		fontWeight: '700',
@@ -227,6 +212,5 @@ const styles = StyleSheet.create({
 		fontSize: 18,
 		fontWeight: '500',
 		opacity: 0.6,
-		//color: '#1C1C1C',
 	},
 });

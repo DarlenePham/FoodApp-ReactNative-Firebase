@@ -63,27 +63,32 @@ const Review = ({ data }) => {
 	);
 };
 
+export default Review;
+
 const styles = StyleSheet.create({
-    outline: {
-        width: '90%',
-        height: 200,
-        alignSelf: 'center',
-        backgroundColor: 'white',
-        borderRadius: 5,
-        margin: 10,
-        shadowColor: "#000",
-        shadowOffset: { width: 0, height: 2, },
-        shadowOpacity: 0.25
-    },
-    logo: {
-        height: 60,
-        width: 60,
-        padding: 5,
-        margin: 10
-    },
-    review: {
-        fontSize: 14,
-        marginLeft: 15,
-        overflow: 'hidden'
-    }
-})
+	outline: {
+		width: '90%',
+		alignSelf: 'center',
+		backgroundColor: 'white',
+		borderRadius: 5,
+		margin: 10,
+		paddingBottom: 5,
+		shadowColor: '#000',
+		shadowOffset: { width: 0, height: 2 },
+		shadowOpacity: 0.25,
+		//overflow: 'hidden'
+	},
+	logo: {
+		height: 60,
+		width: 60,
+		padding: 5,
+		margin: 10,
+	},
+	review: {
+		fontSize: 14,
+		marginLeft: 15,
+		marginRight: 15,
+		//paddingBottom: 7,
+		//overflow: 'hidden'
+	},
+});

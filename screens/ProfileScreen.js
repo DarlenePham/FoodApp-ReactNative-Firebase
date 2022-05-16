@@ -4,12 +4,11 @@ import { StyleSheet, Text, ScrollView, View, Image, TouchableOpacity } from 'rea
 import { FontAwesome5, MaterialCommunityIcons } from "@expo/vector-icons";
 
 import Activity from '../components/activity'
+import { auth } from '../firebase';
 
 const SearchScreen = () => {
     const navigation = useNavigation()
 
-<<<<<<< Updated upstream
-=======
     const handleSetting = () => {
         navigation.navigate("Setting")
     }
@@ -18,7 +17,6 @@ const SearchScreen = () => {
         navigation.navigate("Favorite")
     }
 
->>>>>>> Stashed changes
     return (
         <View style={styles.container}>
             <ScrollView showsVerticalScrollIndicator={false}>
@@ -30,7 +28,7 @@ const SearchScreen = () => {
                         style={styles.ava}
                         source={require('../assets/pro5.png')}
                     />
-                    <Text style={styles.name}>Username</Text>
+                    <Text style={styles.name}>{auth.currentUser?.uid}</Text>
                 </View>
 
                 <View style={{ flexDirection: "row", justifyContent: 'center' }}>
@@ -57,6 +55,7 @@ const SearchScreen = () => {
 
                     <TouchableOpacity
                         style={styles.outline}
+                        onPress={handleSetting}
                     >
                         <Image
                             style={styles.logo}
@@ -99,8 +98,6 @@ export default SearchScreen
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        //justifyContent: 'center',
-        //alignItems: 'center',
         backgroundColor: '#FFB74D'
     },
     box: {

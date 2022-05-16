@@ -10,9 +10,9 @@ const Category = () => {
       >
         <Image
           style={styles.logo}
-          source={require('../assets/pro5.png')}
+          source={require('../assets/burger.png')}
         />
-        <Text style={styles.buttonText}>Food Type</Text>
+        <Text style={styles.buttonText}>Burger</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
@@ -21,9 +21,9 @@ const Category = () => {
       >
         <Image
           style={styles.logo}
-          source={require('../assets/pro5.png')}
+          source={require('../assets/roast-chicken.png')}
         />
-        <Text style={styles.buttonText}>Food Type</Text>
+        <Text style={styles.buttonText}>Chicken</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
@@ -32,9 +32,9 @@ const Category = () => {
       >
         <Image
           style={styles.logo}
-          source={require('../assets/pro5.png')}
+          source={require('../assets/fried-egg.png')}
         />
-        <Text style={styles.buttonText}>Food Type</Text>
+        <Text style={styles.buttonText}>Breakfast</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
@@ -43,9 +43,9 @@ const Category = () => {
       >
         <Image
           style={styles.logo}
-          source={require('../assets/pro5.png')}
+          source={require('../assets/salad.png')}
         />
-        <Text style={styles.buttonText}>Food Type</Text>
+        <Text style={styles.buttonText}>Salad</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
@@ -54,9 +54,9 @@ const Category = () => {
       >
         <Image
           style={styles.logo}
-          source={require('../assets/pro5.png')}
+          source={require('../assets/sushi.png')}
         />
-        <Text style={styles.buttonText}>Food Type</Text>
+        <Text style={styles.buttonText}>Sushi</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
@@ -65,9 +65,9 @@ const Category = () => {
       >
         <Image
           style={styles.logo}
-          source={require('../assets/pro5.png')}
+          source={require('../assets/taco.png')}
         />
-        <Text style={styles.buttonText}>Food Type</Text>
+        <Text style={styles.buttonText}>Taco</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
@@ -76,9 +76,9 @@ const Category = () => {
       >
         <Image
           style={styles.logo}
-          source={require('../assets/pro5.png')}
+          source={require('../assets/cupcake.png')}
         />
-        <Text style={styles.buttonText}>Food Type</Text>
+        <Text style={styles.buttonText}>Dessert</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
@@ -87,9 +87,9 @@ const Category = () => {
       >
         <Image
           style={styles.logo}
-          source={require('../assets/pro5.png')}
+          source={require('../assets/fish.png')}
         />
-        <Text style={styles.buttonText}>Food Type</Text>
+        <Text style={styles.buttonText}>Seafood</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
@@ -98,9 +98,9 @@ const Category = () => {
       >
         <Image
           style={styles.logo}
-          source={require('../assets/pro5.png')}
+          source={require('../assets/sandwich.png')}
         />
-        <Text style={styles.buttonText}>Food Type</Text>
+        <Text style={styles.buttonText}>Sandwich</Text>
       </TouchableOpacity>
     </View>
   );

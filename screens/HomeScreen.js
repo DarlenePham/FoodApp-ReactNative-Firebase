@@ -1,8 +1,3 @@
-import { useNavigation } from '@react-navigation/core'
-import React from 'react'
-import { StyleSheet, Text, ScrollView, View, TouchableOpacity } from 'react-native'
-import { auth } from '../firebase'
-import { FontAwesome5 } from "@expo/vector-icons";
 import { useNavigation } from '@react-navigation/core';
 import React, { useContext, useEffect, useState } from 'react';
 import {
@@ -53,7 +48,6 @@ const HomeScreen = () => {
 		});
 		resContext.getAllRes(data);
 		setRes(data); // store them in the state too for rendering
-    //console.log(data);
 	}, []);
 
 	return (
@@ -72,24 +66,6 @@ const HomeScreen = () => {
 					</>
 				</ScrollView>
 
-        <View style={{ marginTop: 10, marginBottom: 10 }}>
-          <View style={{ flexDirection: "row" }}>
-            <Text style={styles.header}>You may like</Text>
-            <TouchableOpacity
-              onPress={handleSearch}
-            >
-              <FontAwesome5 name="arrow-circle-right" size={30} style={{ right: 0 }} />
-            </TouchableOpacity>
-          </View>
-          <View style={{ flexDirection: "row" }}>
-            <ScrollView showsHorizontalScrollIndicator={false} horizontal={true} style={styles.scrollViewRestaurant}>
-              <View style={styles.wrapper}><Restaurant /></View>
-              <View style={styles.wrapper}><Restaurant /></View>
-              <View style={styles.wrapper}><Restaurant /></View>
-              <View style={styles.wrapper}><Restaurant /></View>
-            </ScrollView>
-          </View>
-        </View>
 				<TouchableOpacity
 					style={styles.button}>
 					<Text style={styles.buttonText}>Can't decide? Let's find out!</Text>
@@ -111,7 +87,7 @@ const HomeScreen = () => {
 							showsHorizontalScrollIndicator={false}
 							horizontal={true}
 							style={styles.scrollViewRestaurant}>
-							{/* here you map the data to each restaurant button and pass the data to the component */}
+							{/* map the data to each restaurant button and pass the data to the component */}
 							{res.slice(0, 4).map((el) => (
 								<View style={styles.wrapper}>
 									<Restaurant data={el} />
@@ -176,8 +152,6 @@ export default HomeScreen;
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		//justifyContent: 'center',
-		//alignItems: 'center',
 		backgroundColor: '#FFB74D',
 	},
 	header: {

@@ -1,16 +1,3 @@
-<<<<<<< Updated upstream
-import React, { useEffect } from "react";
-import { useNavigation } from '@react-navigation/core';
-import { StyleSheet, Text, Image, View, TouchableOpacity } from "react-native";
-import { useState } from 'react';
-import {onSnapshot, collection, getFirestore } from "@firebase/firestore";
-//import { getFoods } from './FirestoreApi'
-
-const Restaurant = () => {
-    const db = getFirestore();
-
-    const[restaurants, setRestaurants] = useState([]);
-=======
 import React, { useEffect } from 'react';
 import { useNavigation } from '@react-navigation/core';
 import { StyleSheet, Text, Image, View, TouchableOpacity } from 'react-native';
@@ -23,8 +10,6 @@ import { ref, getDownloadURL, getStorage } from "firebase/storage";
 // here you have the data prop which was passed in from the HomeScreen. Use this prop to init the component.
 
 const Restaurant = ({ data }) => {
-	const [restaurants, setRestaurants] = useState([]);
-	const [imgUrl, setImgUrl] = useState();
 
 	const navigation = useNavigation();
 
@@ -32,36 +17,6 @@ const Restaurant = ({ data }) => {
 	const handleRestaurant = () => {
 		navigation.navigate('Restaurant', { id: data.id });
 	};
-
-	/**console.log(data.data.cover);
->>>>>>> Stashed changes
-
-	useEffect(() => {
-		const storage = getStorage();
-		const picref = ref(storage, '/maison_alyzee.png');
-		console.log(picref);
-		getDownloadURL(picref).then((url) => {
-			setImgUrl(url)
-		})
-		const func = async () => {
-			//const storage = getStorage();
-			//console.log(picref);
-		}
-		//if(imgUrl == undefined || imgUrl == null) { func() }
-		},[])*/
-
-	// change to whatever your object is.
-	/*
-        I define the object like this:
-        {
-            id: res.id,
-            data: {
-                name: 
-                etc
-            }
-        }
-    */
-   //console.log(data.data.cover);
 
 	return (
 		<View>
